@@ -1,6 +1,6 @@
 # METARMap
 
-Raspberry Pi project to visualize flight conditions on a map using WS8211 LEDs addressed via NeoPixel
+Raspberry Pi project to visualize flight conditions on a map using WS8211 or WS2812 LEDs addressed via NeoPixel
 
 ## Detailed instructions
 
