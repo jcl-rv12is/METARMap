@@ -29,12 +29,20 @@ url = "https://aviationweather.gov/api/data/metar?format=xml&hoursBeforeNow=5&mo
 Based on what I see on aviationweather.gov, this is the long-term URL to use
 
 Since visibility can return a non-integer value now, e.g. "10+".  Two changes made.
+
 Changed:
+
 conditionDict = { "NULL": {"flightCategory" : "", "windDir": "", "windSpeed" : 0, "windGustSpeed" :  0, "windGust" : False, "lightning": False, "tempC" : 0, "dewpointC" : 0, "vis" : 0, "altimHg" : 0, "obs" : "", "skyConditions" : {}, "obsTime" : datetime.datetime.now() } }
+
 to:
+
 conditionDict = { "NULL": {"flightCategory" : "", "windDir": "", "windSpeed" : 0, "windGustSpeed" :  0, "windGust" : False, "lightning": False, "tempC" : 0, "dewpointC" : 0, "vis" : "", "altimHg" : 0, "obs" : "", "skyConditions" : {}, "obsTime" : datetime.datetime.now() } }
+
 AND ... Changed:
+
 vis = int(round(float(metar.find(‘visibility_statute_mi’).text)))
+
 to:
+
 vis = metar.find(‘visibility_statute_mi’).text
 
