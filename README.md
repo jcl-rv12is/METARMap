@@ -17,7 +17,7 @@ LED would not blink if gusts were equal to WIND_BLINK_THRESHOLD
 
 Changed to:
 
-windGust = (True if (ALWAYS_BLINK_FOR_GUSTS or windGustSpeed >=WIND_BLINK_THRESHOLD) else False)
+windGust = (True if (ALWAYS_BLINK_FOR_GUSTS or windGustSpeed >= WIND_BLINK_THRESHOLD) else False)
 
 Changes from Philip Rueker's pre-Oct '23 Code
 ---------------------------------------------
