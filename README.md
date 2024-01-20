@@ -19,8 +19,8 @@ Changed to:
 
 windGust = (True if (ALWAYS_BLINK_FOR_GUSTS or windGustSpeed >= WIND_BLINK_THRESHOLD) else False)
 
-Changes from Philip Rueker's pre-Oct '23 Code
----------------------------------------------
+October 17, 2023 - Changes from Philip Rueker's pre-Oct '23 Code
+----------------------------------------------------------------
 These are slightly different from the changes he made to deal with the aviationweather.gov API changes
 
 Changed line:
