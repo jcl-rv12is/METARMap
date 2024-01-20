@@ -20,8 +20,11 @@ Changes from Philip Rueker's pre-Oct '23 Code
 These are slightly different from the changes he made to deal with the aviationweather.gov API changes
 
 Changed line:
+
 url = "https://aviationweather.gov/cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=metars&stationString=" + ",".join([item for item in airports if item != "NULL"]) + "&hoursBeforeNow=5&format=xml&mostRecent=true&mostRecentForEachStation=constraint"
+
 to:
+
 url = "https://aviationweather.gov/api/data/metar?format=xml&hoursBeforeNow=5&mostRecentForEachStation=true&ids=" + ",".join([item for item in airports if item != "NULL"])
 Based on what I see on aviationweather.gov, this is the long-term URL to use
 
