@@ -9,7 +9,7 @@ See the Word document Metar Map Software Install and Config - 20241215.docx for 
 ## Changes from PRueker's Code:
 December 16, 2024
 -----------------
-Incorporated Philip Rueker's changes from 10/17/23 re # airports in file exceeded LED count, 4/13/2024 re flight category, and 4/15/24 re station ID.
+Incorporated Philip Rueker's changes from 10/17/23 re # airports in file exceeding LED count, 4/13/2024 re flight category, and 4/15/24 re station ID.
 
 January 20, 2024
 ----------------
