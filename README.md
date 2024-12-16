@@ -27,7 +27,7 @@ October 17, 2023 - Changes from Philip Rueker's pre-Oct '23 Code
 ----------------------------------------------------------------
 These are slightly different from the changes he made to deal with the aviationweather.gov API changes
 
-## URL
+- URL
 Changed line:
 
 url = "https://aviationweather.gov/cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=metars&stationString=" + ",".join([item for item in airports if item != "NULL"]) + "&hoursBeforeNow=5&format=xml&mostRecent=true&mostRecentForEachStation=constraint"
@@ -38,7 +38,7 @@ url = "https://aviationweather.gov/api/data/metar?format=xml&hoursBeforeNow=5&mo
 
 Based on what I see on aviationweather.gov, that is is the long-term URL to use.
 
-## Visibility
+- Visibility
 Since visibility can return a non-integer value now, e.g. "10+".  Two changes made.
 
 Changed:
