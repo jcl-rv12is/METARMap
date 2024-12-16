@@ -15,6 +15,14 @@ try:
 except ImportError:
 	displaymetar = None
 
+# metar.py JCL 2.0
+
+# December 16, 2024
+# -----------------
+# Incorporated PRueker's 10/17/23 error handling for too many aiports in airports file vs LED count.
+# Incorporated PRueker's 4/13/24 error handling for missing flight category.
+# Incorporated Prueker's 4/15/24 error handling for missing station ID.
+
 # January 20, 2024
 #-----------------
 # Corrected what appeared to be a typo in line:
@@ -47,10 +55,8 @@ except ImportError:
 
 
 
-# metar.py script iteration 1.5.1
 
-# Changed URL, and adjusted to make "vis" variable a string vs integer as it can now
-# return non-integer values like "10+"
+
 
 # ---------------------------------------------------------------------------
 # ------------START OF CONFIGURATION-----------------------------------------
