@@ -176,6 +176,13 @@ except IOError:
 	print("Rotating through all airports on LED display")
 	displayairports = None
 
+if len(airports) > LED_COUNT:
+	print()
+	print("WARNING: Too many airports in airports file, please increase LED_COUNT or reduce the number of airports")
+	print("Airports: " + str(len(airports)) + " LED_COUNT: " + str(LED_COUNT))
+	print()
+	quit()
+
 # Retrieve METAR from aviationweather.gov data server
 # Details about parameters can be found here: https://www.aviationweather.gov/dataserver/example?datatype=metar
 url = "https://aviationweather.gov/api/data/metar?format=xml&hoursBeforeNow=5&mostRecentForEachStation=true&ids=" + ",".join([item for item in airports if item != "NULL"])
