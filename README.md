@@ -4,7 +4,7 @@ Raspberry Pi project to visualize flight conditions on a map using WS8211 or WS2
 
 ## Detailed instructions
 
-See the Word document Metar Map Software Install and Config - 20241215.docx for complete hardware/software installation instructions.  Embedded in the document is an alternate displaymetar.py script, which will put much larger text on the optional OLED display, albeit with less information - airport code, flight category, wind speed and direction.
+See the Word document Metar Map Software Install and Config - 20251118.docx for complete hardware/software installation instructions.  Embedded in the document is an alternate displaymetar.py script, which will put much larger text on the optional OLED display, albeit with less information - airport code, flight category, wind speed and direction.
 
 ## Changes from PRueker's Code:
 
@@ -81,6 +81,7 @@ vis = int(round(float(metar.find(‘visibility_statute_mi’).text)))
 to:
 
 vis = metar.find(‘visibility_statute_mi’).text
+
 
 
 
