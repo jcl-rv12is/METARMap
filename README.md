@@ -7,6 +7,27 @@ Raspberry Pi project to visualize flight conditions on a map using WS8211 or WS2
 See the Word document Metar Map Software Install and Config - 20241215.docx for complete hardware/software installation instructions.  Embedded in the document is an alternate displaymetar.py script, which will put much larger text on the optional OLED display, albeit with less information - airport code, flight category, wind speed and direction.
 
 ## Changes from PRueker's Code:
+
+November 18, 2025
+-----------------
+1. Small fix to lightning detection to only start scanning the METAR raw text after the airport identifier to avoid mistakenly showing lightning for airports like KUTS.
+   Apparently something in the raw text returned from aviationweather.gov changed in Sept, 2025 where the string "METAR " appears at its start.
+   
+  Changed
+	lightning = False if ((rawText.find('LTG', 4) == -1 and rawText.find('TS', 4) == -1) or rawText.find('TSNO', 4) != -1) else True
+        print(stationId + ":"
+  To
+ 	ightning = False if ((rawText.find('LTG', 10) == -1 and rawText.find('TS', 10) == -1) or rawText.find('TSNO', 10) != -1) else True
+        print(stationId + ":"
+
+ 2. Deleted a try/except block that was intended for ancient versions of python and astral.  Was causing exceptions with new version of PI OS that I didn't feel like
+    chasing down anyway.
+
+ 3. Suppressed outputting the line "Using subset airports for LED display" if a displayairports file was present but the variable ACTIVATE_EXTERNAL_METAR_DISPLAY was false. 
+
+ 4. Amended documentation to call for installing the python3-dev module (required to install rpi_ws281x), and to install the tzdata package.
+    Not sure why, but without the tzdata package, the sunrise/sunset feature was causing an exception.  This did not occur prior to the trixie release of PI OS. 
+
 December 16, 2024
 -----------------
 Incorporated Philip Rueker's changes from 10/17/23 re # airports in file exceeding LED count, 4/13/2024 re flight category, and 4/15/24 re station ID.
@@ -58,4 +79,5 @@ vis = int(round(float(metar.find(‘visibility_statute_mi’).text)))
 to:
 
 vis = metar.find(‘visibility_statute_mi’).text
+
 
