@@ -14,10 +14,10 @@ November 18, 2025
    Apparently something in the raw text returned from aviationweather.gov changed in Sept, 2025 where the string "METAR " appears at its start.
    
   Changed
-	lightning = False if ((rawText.find('LTG', 4) == -1 and rawText.find('TS', 4) == -1) or rawText.find('TSNO', 4) != -1) else True
+  	lightning = False if ((rawText.find('LTG', 4) == -1 and rawText.find('TS', 4) == -1) or rawText.find('TSNO', 4) != -1) else True
         print(stationId + ":"
   To
- 	ightning = False if ((rawText.find('LTG', 10) == -1 and rawText.find('TS', 10) == -1) or rawText.find('TSNO', 10) != -1) else True
+  	lightning = False if ((rawText.find('LTG', 10) == -1 and rawText.find('TS', 10) == -1) or rawText.find('TSNO', 10) != -1) else True
         print(stationId + ":"
 
  2. Deleted a try/except block that was intended for ancient versions of python and astral.  Was causing exceptions with new version of PI OS that I didn't feel like
@@ -79,5 +79,6 @@ vis = int(round(float(metar.find(‘visibility_statute_mi’).text)))
 to:
 
 vis = metar.find(‘visibility_statute_mi’).text
+
 
 
