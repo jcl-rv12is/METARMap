@@ -25,7 +25,8 @@ except ImportError:
 #
 #   Changed
 #	lightning = False if ((rawText.find('LTG', 4) == -1 and rawText.find('TS', 4) == -1) or rawText.find('TSNO', 4) != -1) else True
-#   To
+#   
+#	To
 # 
 #	lightning = False if ((rawText.find('LTG', 10) == -1 and rawText.find('TS', 10) == -1) or rawText.find('TSNO', 10) != -1) else True
 #
